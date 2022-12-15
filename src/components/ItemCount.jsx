@@ -7,8 +7,6 @@ const ItemCount = ({stock}) => {
     const [disponibles, setDisponibles] = useState(stock);
 
     const agregarCantidad = () => {
-        console.log(cantidad);
-        console.log(disponibles);
         if(cantidad < disponibles){
             setCantidad(cantidad + 1);
         }
