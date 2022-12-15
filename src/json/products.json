@@ -1,0 +1,56 @@
+[
+    {
+        "id": 1,
+        "nombre": "BOSS FITNESS PRODUCTS",
+        "descripcion": "Assisted Pull Up Bands - Power Lifting Bands - Resistance Loop Bands - Stretching Bands - 41 Inches (Single Band)",
+        "imagen": "https://m.media-amazon.com/images/I/41M-kgl6JSL._AC_SL1500_.jpg",
+        "precio": 11,
+        "stock": 10,
+        "categoria": "equipo-deportivo"
+    },
+    {
+        "id": 2,
+        "nombre": "Masajeador muscular",
+        "descripcion": "Pistola de masaje masajeador muscular de percusión para entrenamiento en casa, oficina, herramienta de recuperación de mano silenciosa rentable para aliviar el dolor terapia diaria, Entesi 3 negro",
+        "imagen": "https://m.media-amazon.com/images/I/614zVeFZUzS._AC_SL1500_.jpg",
+        "precio": 60,
+        "stock": 10,
+        "categoria": "otros"
+    },
+    {
+        "id": 3,
+        "nombre": "Fitbit Charge 5 Negro",
+        "descripcion": "Optimiza tu rutina de entrenamiento con una puntuación de preparación diaria que revela si estás listo para hacer ejercicio o si debes centrarte en la recuperación ",
+        "imagen": "https://m.media-amazon.com/images/I/61xh+Cewq5L._AC_SL1500_.jpg",
+        "precio": 99,
+        "stock": 10,
+        "categoria": "otros"
+    },
+    {
+        "id": 4,
+        "nombre": "Juego de pesas de barra ajustable",
+        "descripcion": "Juego de pesas de barra ajustable para levantamiento de pesas de 45 libras, bomba corporal para fitness, ejercicio en casa y gimnasio",
+        "imagen": "https://m.media-amazon.com/images/I/716mHWA+m6L._AC_SL1500_.jpg",
+        "precio": 89,
+        "stock": 10,
+        "categoria": "equipo-deportivo"
+    },
+    {
+        "id": 5,
+        "nombre": "Proteína de Suero de Leche en Polvo",
+        "descripcion": "Optimum Nutrition Estándar dorado 100% Proteína de Suero de Leche en Polvo, Pie de lima, 1.8 Libra",
+        "imagen": "https://m.media-amazon.com/images/I/61u-qC6Z-mL._AC_SL1500_.jpg",
+        "precio": 35,
+        "stock": 10,
+        "categoria": "suplementos"
+    },
+    {
+        "id": 6,
+        "nombre": "Creatina",
+        "descripcion": "Universal Nutrition Creatina, 500 gramos, polvo",
+        "imagen": "https://m.media-amazon.com/images/I/71DFL0kr1FS._AC_SL1500_.jpg",
+        "precio": 24,
+        "stock": 10,
+        "categoria": "suplementos"
+    }
+]
