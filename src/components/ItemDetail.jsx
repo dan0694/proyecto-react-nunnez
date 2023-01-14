@@ -15,13 +15,13 @@ const ItemDetail = ({ item }) => {
     return (
         <div className="row">
             <div className="col-md-6 offset-md-3">
-                {JSON.stringify(item) === '{}' ? 
-                <div className="box my-3 shadow">
-                    <h1 className="py-3 fs-3">Producto no encontrado</h1>
-                    <Link className="btn btn-dark mb-2" to={"/"}>Volver al inicio</Link>
-                </div>
-                
-                :
+                {JSON.stringify(item) === '{}' ?
+                    <div className="box my-3 shadow">
+                        <h1 className="py-3 fs-3">Producto no encontrado</h1>
+                        <Link className="btn btn-dark mb-2" to={"/"}>Volver al inicio</Link>
+                    </div>
+
+                    :
                     <div className="box my-3 shadow">
                         <div className="image-container">
                             <img className="image" src={item.imagen} alt={item.nombre} />

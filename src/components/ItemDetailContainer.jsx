@@ -2,7 +2,6 @@ import React from "react";
 import { useEffect } from "react";
 import { useState } from "react";
 import { useParams } from "react-router-dom";
-// import arrayData from "../json/products.json";
 import ItemDetail from "./ItemDetail";
 import { getFirestore, doc, getDoc } from "firebase/firestore";
 import Loading from "./Loading";
@@ -14,18 +13,6 @@ const ItemDetailContainer = () => {
 
     const { id } = useParams();
 
-    // Promesa para aceder a los datos desde un JSON
-    // useEffect(() =>{
-    //     const promise = new Promise((resolve) => {
-    //         setTimeout(() => {
-    //             resolve(arrayData.find(item => item.id === parseInt(id)))
-    //         }, 1000);
-    //     });
-
-    //     promise.then((data) =>{
-    //         setItem(data)
-    //     })
-    // }, [id])
 
     // Promesa para acceder a los datos desde firestore
     useEffect(() => {
@@ -41,7 +28,7 @@ const ItemDetailContainer = () => {
 
             }
         })
-    }, [])
+    }, [id])
 
     return (
         <div className="container">

@@ -3,6 +3,7 @@ import { useState } from "react";
 import { useContext } from "react";
 import { CartContext } from "./context/CartContext";
 import { getFirestore, collection, addDoc } from "firebase/firestore";
+import { Navigate } from "react-router-dom";
 
 
 
@@ -18,13 +19,13 @@ const Checkout = () => {
         const order = {
             buyer: { name: nombre, email: email, phone: telefono },
             items: cart.map(item => ({ id: item.id, title: item.nombre, price: item.precio, quantity: item.quantity, proce_total: item.precio * item.quantity })),
-            date: `${fecha.getDate()}-${fecha.getMonth()+1}-${fecha.getFullYear()} ${fecha.getHours()}:${fecha.getMinutes()}:${fecha.getSeconds()}`,
+            date: `${fecha.getDate()}-${fecha.getMonth() + 1}-${fecha.getFullYear()} ${fecha.getHours()}:${fecha.getMinutes()}:${fecha.getSeconds()}`,
             total: sumaTotal()
         }
 
         const db = getFirestore();
         const ordersColection = collection(db, 'orders')
-        addDoc(ordersColection, order).then((snapShot) =>{
+        addDoc(ordersColection, order).then((snapShot) => {
             setOrderId(snapShot.id);
             setNombre("");
             setEmail("");
@@ -77,11 +78,8 @@ const Checkout = () => {
                 </div>
             </div>
             <div className="row my-5">
-                {orderId ? 
-                <div role="alert" className="alert alert-primary text-center">
-                    <h1>Felicitaciones!</h1>
-                    <p>Tu número de orden es: {orderId}</p>
-                </div> : ""}
+                {orderId ?
+                    <Navigate to={"/bill/"+orderId}/> : ""}
             </div>
         </div>
 

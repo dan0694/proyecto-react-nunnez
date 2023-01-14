@@ -20,10 +20,10 @@ const NavBar = () => {
                 </button>
                 <div className="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-                       <NavItem name="Suplementos" url="/category/suplementos"/>
-                       <NavItem name="Equipo deportivo" url="/category/equipo-deportivo"/>
-                       <NavItem name="Ropa deportiva" url="/category/ropa"/>
-                       <NavItem name="Otros" url="/category/otros"/>
+                        <NavItem name="Suplementos" url="/category/suplementos" />
+                        <NavItem name="Equipo deportivo" url="/category/equipo-deportivo" />
+                        <NavItem name="Ropa deportiva" url="/category/ropa" />
+                        <NavItem name="Otros" url="/category/otros" />
                     </ul>
                     <div className="d-flex">
                         <CartWidget />

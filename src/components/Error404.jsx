@@ -1,6 +1,6 @@
 import React from "react";
 
-const Error404 = () =>{
+const Error404 = () => {
     return (
         <div className="container mt-5 text-center">
             <h1>Recurso no encontrado</h1>
