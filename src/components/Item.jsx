@@ -11,7 +11,7 @@ const Item = ({ item }) => {
                     </div>
                     <h5>{item.nombre}</h5>
                     <p className="font-weight-bold">$ {item.precio}</p>
-                    <p><span className="badge bg-dark">{item.categoria}</span></p>
+                    <p><span className="badge bg-success">{item.categoria}</span></p>
                 </div>
             </Link>
         </div>

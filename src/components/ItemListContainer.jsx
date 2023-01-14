@@ -1,33 +1,56 @@
 import React from "react";
-import arrayData from "../json/products.json";
+// import arrayData from "../json/products.json";
 import { useEffect } from "react";
 import { useState } from "react";
 import ItemList from "./ItemList";
 import { useParams } from "react-router-dom";
- 
- const ItemListContainer = ({greeting}) => {
+import {getFirestore, getDocs,collection, where, query} from "firebase/firestore";
+import Loading from "./Loading";
 
-    const [items, setTitems] = useState([]);
+
+ const ItemListContainer = () => {
+
+    const [items, setItems] = useState([]);
+
+    const [loading, setLoading] = useState(true);
+
     const {id} = useParams();
 
-    useEffect(() =>{
-        const promise = new Promise((resolve) =>{
-            setTimeout(() =>{
-                resolve(id ? arrayData.filter(item => item.categoria === id): arrayData);
-            }, 1000)
-        });
+    // Insertar
+    // useEffect (() =>{
+    //     const db = getFirestore();
+    //     const itemsCollection = collection(db, 'items')
 
-        promise.then((data) =>{
-            setTitems(data);
-        });
+    //     arrayData.forEach((item) =>{
+    //         addDoc(itemsCollection, item)
+    //     });
         
-    }, [id]);
+    // }, []) 
+
+
+    // Consultar
+
+    useEffect(() =>{
+        const db = getFirestore();
+        const documento = collection(db, 'items');
+        const q = id ? query(documento, where('categoria', '==', id)) : documento;
+
+        getDocs(q).then((snapShot) => {
+            setItems(snapShot.docs.map((doc) =>
+               ( {id:doc.id, ...doc.data()})
+            ));
+            setLoading(false)
+         
+        })
+    }, [id])
 
     return(
         <div className="container">
-        <ItemList items={items}/>
+            {loading ? <Loading/> :
+            <ItemList items={items}/>
+        }
         </div>
-        
+
     )
  }
 

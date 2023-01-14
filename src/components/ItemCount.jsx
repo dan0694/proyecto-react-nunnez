@@ -1,10 +1,12 @@
 import { useEffect } from "react";
 import { React, useState } from "react";
+import { Link } from "react-router-dom";
 
-const ItemCount = ({stock}) => {
+const ItemCount = ({stock, onAdd}) => {
 
     const [cantidad, setCantidad] = useState(1);
     const [disponibles, setDisponibles] = useState(stock);
+    const [vendido, setvendido] = useState(false);
 
     const agregarCantidad = () => {
         if(cantidad < disponibles){
@@ -21,14 +23,11 @@ const ItemCount = ({stock}) => {
         setDisponibles(stock);
     }, [stock])
 
-    const onAdd = () =>{
-        if(disponibles > 0 && cantidad <= disponibles){
-            console.log('Se han agregado '+cantidad+' productos al carrito');
-            setDisponibles(disponibles-cantidad);
-            setCantidad(1);
-        } else{
-            console.log('No quedan disponibles');
-        }
+    const addToCart = (quantity) =>{
+        setvendido(true);
+        setDisponibles(disponibles -quantity)
+        onAdd(quantity);
+        setCantidad(1)
     }
 
     return (
@@ -42,7 +41,7 @@ const ItemCount = ({stock}) => {
                     </div>
                 </div>
                 <div className="">
-                    <button className="btn btn-outline-dark" onClick={onAdd}>Agregar</button>
+                  {vendido ? <Link to={'/cart'} className='btn btn-outline-dark'> Terminar compra</Link> : <button className="btn btn-outline-dark" onClick={() => {addToCart(cantidad)}}>Agregar</button>}
                 </div>
             </div>
         </div>
